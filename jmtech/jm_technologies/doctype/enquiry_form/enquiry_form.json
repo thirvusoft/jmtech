@@ -5,17 +5,656 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_jpmx"
+  "customer_details_section",
+  "customer",
+  "company",
+  "address",
+  "column_break_ustn",
+  "estimate_closing_date",
+  "site_name",
+  "contact_details_section",
+  "table_ibty",
+  "site_photos_section",
+  "photo_1",
+  "photo_2",
+  "column_break_xwud",
+  "photo_3",
+  "photo_4",
+  "select_product_section",
+  "ro_system",
+  "water_tds",
+  "water_hardness",
+  "per_day_usage_in_ltrs",
+  "where_they_treated_water",
+  "pump_flow_rate",
+  "unit_installation_rate",
+  "unit_room_size",
+  "section_break_ednx",
+  "softner",
+  "water_tds_softner",
+  "water_hardness_softner",
+  "usage_softner",
+  "treated_water_softner",
+  "pump_flow_rate_softner",
+  "unit_installation_area_softner",
+  "unit_room_size_softner",
+  "section_break_trnr",
+  "rain_water_harvesting",
+  "rain_water_collection_roof_area",
+  "tank_capacity",
+  "average_rainfall",
+  "treated_water_rain",
+  "pre_filteration",
+  "pipe_size_or_water_flow_rate",
+  "section_break_wwbv",
+  "water_dispenser",
+  "model",
+  "unit_width",
+  "temperature",
+  "filter_method",
+  "inlet_water_tds",
+  "usage_water_dispenser",
+  "treated_water_dispenser",
+  "what_type_of_inlet_water",
+  "unit_installation_area_dispenser",
+  "no_of_unit",
+  "section_break_ymcx",
+  "sewage_water_treatment",
+  "total_no_of_staffsworkers_in_a_day_penos",
+  "floating_population_in_a_day",
+  "no_of_shift_in_a_day",
+  "cooking_facility_available",
+  "no_of_meals_cooked__day",
+  "staff_quarters_included",
+  "no_of_flats",
+  "total_no_of_flats",
+  "total_no_of_population",
+  "no_of_students_day_scholar",
+  "no_of_professorsteachers",
+  "non_teaching_staff",
+  "no_of_hostel_students",
+  "cooking_facility_for_hostel_students",
+  "no_of_meals_cookedday",
+  "canteen_facility_for_other_studentsstaff",
+  "meals_staff",
+  "no_of_rooms",
+  "no_of_people_working_in_the_hotel",
+  "is_the_restaurant_designed_for_in_house_guests",
+  "seats_accomodated",
+  "banquet_hall_available",
+  "max_occupancy_and_cooking_facility_at_the_event_time",
+  "no_of_beds",
+  "no_of_staff_in_the_hospital",
+  "no_of_outpatientfloating_population_per_day",
+  "is_canteen_available",
+  "meals_cooked_hospital",
+  "other_details_section",
+  "intended_reuse_of_treated_water_for_gardening",
+  "output_treated_water_quality_in_terms_of",
+  "bod",
+  "cod",
+  "tss",
+  "type_of_construction_for_the_tanks",
+  "tank_model",
+  "expected_date_of_the_project_commencement",
+  "no_site_conditions",
+  "basic_purpose_of_installing_stp"
  ],
  "fields": [
   {
-   "fieldname": "section_break_jpmx",
+   "fieldname": "customer_details_section",
+   "fieldtype": "Section Break",
+   "label": "Customer details"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "label": "Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "column_break_ustn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "estimate_closing_date",
+   "fieldtype": "Date",
+   "label": "Estimate closing date"
+  },
+  {
+   "fieldname": "site_name",
+   "fieldtype": "Data",
+   "label": "Site name"
+  },
+  {
+   "fieldname": "contact_details_section",
+   "fieldtype": "Section Break",
+   "label": "Contact details"
+  },
+  {
+   "fieldname": "table_ibty",
+   "fieldtype": "Table",
+   "options": "Contact details"
+  },
+  {
+   "fieldname": "site_photos_section",
+   "fieldtype": "Section Break",
+   "label": "Site Photos"
+  },
+  {
+   "fieldname": "photo_1",
+   "fieldtype": "Attach Image",
+   "label": "Photo 1"
+  },
+  {
+   "fieldname": "photo_2",
+   "fieldtype": "Attach Image",
+   "label": "Photo 2"
+  },
+  {
+   "fieldname": "column_break_xwud",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "photo_3",
+   "fieldtype": "Attach Image",
+   "label": "Photo 3"
+  },
+  {
+   "fieldname": "photo_4",
+   "fieldtype": "Attach Image",
+   "label": "Photo 4"
+  },
+  {
+   "fieldname": "select_product_section",
+   "fieldtype": "Section Break",
+   "label": "Select Product"
+  },
+  {
+   "default": "0",
+   "fieldname": "ro_system",
+   "fieldtype": "Check",
+   "label": "RO System"
+  },
+  {
+   "depends_on": "eval:doc.ro_system == '1'",
+   "fieldname": "water_tds",
+   "fieldtype": "Data",
+   "label": "Water TDS"
+  },
+  {
+   "depends_on": "eval:doc.ro_system == '1'",
+   "fieldname": "water_hardness",
+   "fieldtype": "Data",
+   "label": "Water hardness"
+  },
+  {
+   "depends_on": "eval:doc.ro_system == '1'",
+   "fieldname": "per_day_usage_in_ltrs",
+   "fieldtype": "Data",
+   "label": "Per day usage (In Ltrs)"
+  },
+  {
+   "depends_on": "eval:doc.ro_system == '1'",
+   "fieldname": "where_they_treated_water",
+   "fieldtype": "Data",
+   "label": "Where they treated water"
+  },
+  {
+   "depends_on": "eval:doc.ro_system == '1'",
+   "fieldname": "pump_flow_rate",
+   "fieldtype": "Data",
+   "label": "Pump Flow rate"
+  },
+  {
+   "depends_on": "eval:doc.ro_system == '1'",
+   "fieldname": "unit_installation_rate",
+   "fieldtype": "Data",
+   "label": "Unit installation rate"
+  },
+  {
+   "depends_on": "eval:doc.ro_system == '1'",
+   "fieldname": "unit_room_size",
+   "fieldtype": "Float",
+   "label": "Unit Room size"
+  },
+  {
+   "fieldname": "section_break_ednx",
    "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "softner",
+   "fieldtype": "Check",
+   "label": "Softner"
+  },
+  {
+   "depends_on": "eval:doc.softner == '1'",
+   "fieldname": "water_tds_softner",
+   "fieldtype": "Data",
+   "label": "Water TDS"
+  },
+  {
+   "depends_on": "eval:doc.softner == '1'",
+   "fieldname": "water_hardness_softner",
+   "fieldtype": "Data",
+   "label": "Water hardness"
+  },
+  {
+   "depends_on": "eval:doc.softner == '1'",
+   "fieldname": "usage_softner",
+   "fieldtype": "Data",
+   "label": "Per day usage (in Ltrs)"
+  },
+  {
+   "depends_on": "eval:doc.softner == '1'",
+   "fieldname": "treated_water_softner",
+   "fieldtype": "Data",
+   "label": "Where they treated water"
+  },
+  {
+   "depends_on": "eval:doc.softner == '1'",
+   "fieldname": "pump_flow_rate_softner",
+   "fieldtype": "Data",
+   "label": "Pump flow rate"
+  },
+  {
+   "depends_on": "eval:doc.softner == '1'",
+   "fieldname": "unit_installation_area_softner",
+   "fieldtype": "Data",
+   "label": "Unit installation area"
+  },
+  {
+   "depends_on": "eval:doc.softner == '1'",
+   "fieldname": "unit_room_size_softner",
+   "fieldtype": "Float",
+   "label": "Unit room size"
+  },
+  {
+   "fieldname": "section_break_trnr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "rain_water_harvesting",
+   "fieldtype": "Check",
+   "label": "Rain water harvesting"
+  },
+  {
+   "depends_on": "eval:doc.rain_water_harvesting == '1'",
+   "fieldname": "rain_water_collection_roof_area",
+   "fieldtype": "Data",
+   "label": "Rain water collection roof area"
+  },
+  {
+   "depends_on": "eval:doc.rain_water_harvesting == '1'",
+   "fieldname": "tank_capacity",
+   "fieldtype": "Data",
+   "label": "Tank capacity"
+  },
+  {
+   "depends_on": "eval:doc.rain_water_harvesting == '1'",
+   "fieldname": "average_rainfall",
+   "fieldtype": "Data",
+   "label": "Average rainfall"
+  },
+  {
+   "depends_on": "eval:doc.rain_water_harvesting == '1'",
+   "fieldname": "treated_water_rain",
+   "fieldtype": "Data",
+   "label": "Where they treated water"
+  },
+  {
+   "depends_on": "eval:doc.rain_water_harvesting == '1'",
+   "fieldname": "pre_filteration",
+   "fieldtype": "Select",
+   "label": "Pre filteration",
+   "options": "\nYes\nNo"
+  },
+  {
+   "depends_on": "eval:doc.pre_filteration == 'Yes'\n",
+   "fieldname": "pipe_size_or_water_flow_rate",
+   "fieldtype": "Data",
+   "label": "Pipe size or water flow rate"
+  },
+  {
+   "fieldname": "section_break_wwbv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "water_dispenser",
+   "fieldtype": "Check",
+   "label": "Water dispenser"
+  },
+  {
+   "depends_on": "eval:doc.water_dispenser == '1'",
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "label": "Model"
+  },
+  {
+   "depends_on": "eval:doc.water_dispenser == '1'",
+   "fieldname": "unit_width",
+   "fieldtype": "Data",
+   "label": "Unit width"
+  },
+  {
+   "depends_on": "eval:doc.water_dispenser == '1'",
+   "fieldname": "temperature",
+   "fieldtype": "Select",
+   "label": "Temperature",
+   "options": "\nNormal\nNormal Hot\nNormal cold\nNormal Hot cold"
+  },
+  {
+   "depends_on": "eval:doc.water_dispenser == '1'",
+   "fieldname": "filter_method",
+   "fieldtype": "Select",
+   "label": "Filter method",
+   "options": "\nNormal Filtration\nRO\nUV\nRO + UV"
+  },
+  {
+   "depends_on": "eval:doc.water_dispenser == '1'",
+   "fieldname": "inlet_water_tds",
+   "fieldtype": "Data",
+   "label": "Inlet water TDS"
+  },
+  {
+   "depends_on": "eval:doc.water_dispenser == '1'",
+   "fieldname": "usage_water_dispenser",
+   "fieldtype": "Data",
+   "label": "Per day usage (In Ltrs)"
+  },
+  {
+   "depends_on": "eval:doc.water_dispenser == '1'",
+   "fieldname": "treated_water_dispenser",
+   "fieldtype": "Data",
+   "label": "Where they treated water"
+  },
+  {
+   "depends_on": "eval:doc.water_dispenser == '1'",
+   "fieldname": "what_type_of_inlet_water",
+   "fieldtype": "Select",
+   "label": "What type of inlet water",
+   "options": "\nRO Water\nMetro water\nBore well\nWell water"
+  },
+  {
+   "depends_on": "eval:doc.water_dispenser == '1'",
+   "fieldname": "unit_installation_area_dispenser",
+   "fieldtype": "Data",
+   "label": "Unit installation area"
+  },
+  {
+   "depends_on": "eval:doc.water_dispenser == '1'",
+   "fieldname": "no_of_unit",
+   "fieldtype": "Float",
+   "label": "No of unit"
+  },
+  {
+   "fieldname": "section_break_ymcx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sewage_water_treatment",
+   "fieldtype": "Select",
+   "label": "Sewage water treatment",
+   "options": "\nOffice/Warehouse/Industries\nSingle Home/Villas/Apartment/Gated Community\nSchool/College/Educational Institutions\nHotel/Restaurants/Resort\nHospital"
+  },
+  {
+   "depends_on": "eval:doc.sewage_water_treatment == 'Office/Warehouse/Industries'",
+   "fieldname": "total_no_of_staffsworkers_in_a_day_penos",
+   "fieldtype": "Data",
+   "label": "Total no. of staffs/workers in a day (PE/nos.) "
+  },
+  {
+   "depends_on": "eval:doc.sewage_water_treatment == 'Office/Warehouse/Industries'",
+   "fieldname": "floating_population_in_a_day",
+   "fieldtype": "Data",
+   "label": "Floating population in a day"
+  },
+  {
+   "depends_on": "eval:doc.sewage_water_treatment == 'Office/Warehouse/Industries'",
+   "fieldname": "no_of_shift_in_a_day",
+   "fieldtype": "Data",
+   "label": "No. of shift in a day"
+  },
+  {
+   "depends_on": "eval:doc.sewage_water_treatment == 'Office/Warehouse/Industries'",
+   "fieldname": "cooking_facility_available",
+   "fieldtype": "Select",
+   "label": "Cooking facility available",
+   "options": "\nYes\nNo"
+  },
+  {
+   "depends_on": "eval:doc.cooking_facility_available == 'Yes'",
+   "fieldname": "no_of_meals_cooked__day",
+   "fieldtype": "Data",
+   "label": "No. of meals cooked / day"
+  },
+  {
+   "depends_on": "eval:doc.sewage_water_treatment == 'Office/Warehouse/Industries'",
+   "fieldname": "staff_quarters_included",
+   "fieldtype": "Select",
+   "label": "Staff quarters included",
+   "options": "\nYes\nNo"
+  },
+  {
+   "depends_on": "eval:doc.staff_quarters_included == 'Yes'",
+   "fieldname": "no_of_flats",
+   "fieldtype": "Data",
+   "label": "No. of flats"
+  },
+  {
+   "depends_on": "eval:doc.sewage_water_treatment == 'Single Home/Villas/Apartment/Gated Community'",
+   "fieldname": "total_no_of_flats",
+   "fieldtype": "Data",
+   "label": "Total no. of flats"
+  },
+  {
+   "depends_on": "eval:doc.sewage_water_treatment == 'Single Home/Villas/Apartment/Gated Community'",
+   "fieldname": "total_no_of_population",
+   "fieldtype": "Data",
+   "label": "Total no. of population"
+  },
+  {
+   "depends_on": "eval:doc.sewage_water_treatment == 'School/College/Educational Institutions'",
+   "fieldname": "no_of_students_day_scholar",
+   "fieldtype": "Data",
+   "label": "No. of students (day scholar)"
+  },
+  {
+   "depends_on": "eval:doc.sewage_water_treatment == 'School/College/Educational Institutions'",
+   "fieldname": "no_of_professorsteachers",
+   "fieldtype": "Data",
+   "label": "No. of Professors/Teachers"
+  },
+  {
+   "depends_on": "eval:doc.sewage_water_treatment == 'School/College/Educational Institutions'",
+   "fieldname": "non_teaching_staff",
+   "fieldtype": "Data",
+   "label": "No. of Non-teaching staff"
+  },
+  {
+   "depends_on": "eval:doc.sewage_water_treatment == 'School/College/Educational Institutions'",
+   "fieldname": "no_of_hostel_students",
+   "fieldtype": "Data",
+   "label": "No. of hostel students"
+  },
+  {
+   "depends_on": "eval:doc.sewage_water_treatment == 'School/College/Educational Institutions'",
+   "fieldname": "cooking_facility_for_hostel_students",
+   "fieldtype": "Select",
+   "label": "Cooking facility for hostel students",
+   "options": "\nYes\nNo"
+  },
+  {
+   "depends_on": "eval:doc.cooking_facility_for_hostel_students == 'Yes'",
+   "fieldname": "no_of_meals_cookedday",
+   "fieldtype": "Data",
+   "label": "No. of meals cooked/day"
+  },
+  {
+   "depends_on": "eval:doc.sewage_water_treatment == 'School/College/Educational Institutions'",
+   "fieldname": "canteen_facility_for_other_studentsstaff",
+   "fieldtype": "Select",
+   "label": "Canteen facility for other students/staff",
+   "options": "\nYes\nNo"
+  },
+  {
+   "depends_on": "eval:doc.canteen_facility_for_other_studentsstaff == 'Yes'",
+   "fieldname": "meals_staff",
+   "fieldtype": "Data",
+   "label": "No. of meals cooked/day"
+  },
+  {
+   "depends_on": "eval:doc.sewage_water_treatment == 'Hotel/Restaurants/Resort'",
+   "fieldname": "no_of_rooms",
+   "fieldtype": "Data",
+   "label": "No. of Rooms"
+  },
+  {
+   "depends_on": "eval:doc.sewage_water_treatment == 'Hotel/Restaurants/Resort'",
+   "fieldname": "no_of_people_working_in_the_hotel",
+   "fieldtype": "Data",
+   "label": "No. of people working in the hotel"
+  },
+  {
+   "depends_on": "eval:doc.sewage_water_treatment == 'Hotel/Restaurants/Resort'",
+   "fieldname": "is_the_restaurant_designed_for_in_house_guests",
+   "fieldtype": "Select",
+   "label": "Is the restaurant designed for in house guests",
+   "options": "\nYes\nNo"
+  },
+  {
+   "depends_on": "eval:doc.is_the_restaurant_designed_for_in_house_guests == 'No'",
+   "fieldname": "seats_accomodated",
+   "fieldtype": "Data",
+   "label": "Maximum seats occupied in the restaurant"
+  },
+  {
+   "depends_on": "eval:doc.sewage_water_treatment == 'Hotel/Restaurants/Resort'",
+   "fieldname": "banquet_hall_available",
+   "fieldtype": "Select",
+   "label": "Banquet hall available",
+   "options": "\nYes\nNo"
+  },
+  {
+   "depends_on": "eval:doc.banquet_hall_available == 'Yes'",
+   "fieldname": "max_occupancy_and_cooking_facility_at_the_event_time",
+   "fieldtype": "Data",
+   "label": "Maximum seats  and cooking facility occupancy at the event time"
+  },
+  {
+   "depends_on": "eval:doc.sewage_water_treatment == 'Hospital'",
+   "fieldname": "no_of_beds",
+   "fieldtype": "Data",
+   "label": "No. of beds"
+  },
+  {
+   "depends_on": "eval:doc.sewage_water_treatment == 'Hospital'",
+   "fieldname": "no_of_staff_in_the_hospital",
+   "fieldtype": "Data",
+   "label": "No. of staff in the hospital"
+  },
+  {
+   "depends_on": "eval:doc.sewage_water_treatment == 'Hospital'",
+   "fieldname": "no_of_outpatientfloating_population_per_day",
+   "fieldtype": "Data",
+   "label": "No. of Outpatient/floating population per day"
+  },
+  {
+   "depends_on": "eval:doc.sewage_water_treatment == 'Hospital'",
+   "fieldname": "is_canteen_available",
+   "fieldtype": "Select",
+   "label": "Is canteen available",
+   "options": "\nYes\nNo"
+  },
+  {
+   "depends_on": "eval:doc.is_canteen_available == 'Yes'",
+   "fieldname": "meals_cooked_hospital",
+   "fieldtype": "Data",
+   "label": "No. of meals cooked/day"
+  },
+  {
+   "fieldname": "other_details_section",
+   "fieldtype": "Section Break",
+   "label": "Other details"
+  },
+  {
+   "fieldname": "intended_reuse_of_treated_water_for_gardening",
+   "fieldtype": "Select",
+   "label": "Intended reuse of treated water for Gardening",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "output_treated_water_quality_in_terms_of",
+   "fieldtype": "Select",
+   "label": "Output treated water quality in terms of",
+   "options": "\nBOD\nCOD\nTSS"
+  },
+  {
+   "depends_on": "eval:doc.output_treated_water_quality_in_terms_of == 'BOD'",
+   "fieldname": "bod",
+   "fieldtype": "Data",
+   "label": "BOD"
+  },
+  {
+   "depends_on": "eval:doc.output_treated_water_quality_in_terms_of == 'COD'",
+   "fieldname": "cod",
+   "fieldtype": "Data",
+   "label": "COD"
+  },
+  {
+   "depends_on": "eval:doc.output_treated_water_quality_in_terms_of == 'TSS'",
+   "fieldname": "tss",
+   "fieldtype": "Data",
+   "label": "TSS"
+  },
+  {
+   "fieldname": "type_of_construction_for_the_tanks",
+   "fieldtype": "Select",
+   "label": "Type of construction for the tanks",
+   "options": "\nCivil Tanks\nPre-Cast Tanks\nFRP\nMSFRP"
+  },
+  {
+   "fieldname": "tank_model",
+   "fieldtype": "Select",
+   "label": "Tank model",
+   "options": "\nSquare\nRectangle\nRound"
+  },
+  {
+   "fieldname": "expected_date_of_the_project_commencement",
+   "fieldtype": "Date",
+   "label": "Expected date of the project commencement"
+  },
+  {
+   "fieldname": "no_site_conditions",
+   "fieldtype": "Small Text",
+   "label": "No site conditions"
+  },
+  {
+   "fieldname": "basic_purpose_of_installing_stp",
+   "fieldtype": "Select",
+   "label": "Basic purpose of installing STP",
+   "options": "\nGovt regulation\nStrong need for recycling\nTo get PCB approval\nEnvironmental care"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-21 15:22:47.028546",
+ "modified": "2023-12-22 13:11:31.068074",
  "modified_by": "Administrator",
  "module": "JM Technologies",
  "name": "Enquiry form",
