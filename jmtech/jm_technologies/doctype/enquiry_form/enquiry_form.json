@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "ENQ-.####",
  "creation": "2023-12-21 15:22:47.028546",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -110,18 +111,24 @@
    "fieldname": "customer",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Customer",
+   "label": "Lead",
    "options": "Customer",
    "reqd": 1
   },
   {
    "fieldname": "company",
    "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Company"
   },
   {
    "fieldname": "address",
    "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Address",
    "options": "Address"
   },
@@ -132,11 +139,17 @@
   {
    "fieldname": "estimate_closing_date",
    "fieldtype": "Date",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Estimate closing date"
   },
   {
    "fieldname": "site_name",
    "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Site name"
   },
   {
@@ -210,8 +223,9 @@
   {
    "depends_on": "eval:doc.ro_system == '1'",
    "fieldname": "where_they_treated_water",
-   "fieldtype": "Data",
-   "label": "Where they treated water"
+   "fieldtype": "Link",
+   "label": "Where they treated water",
+   "options": "Water Treatment"
   },
   {
    "depends_on": "eval:doc.ro_system == '1'",
@@ -262,8 +276,9 @@
   {
    "depends_on": "eval:doc.softner == '1'",
    "fieldname": "treated_water_softner",
-   "fieldtype": "Data",
-   "label": "Where they treated water"
+   "fieldtype": "Link",
+   "label": "Where they treated water",
+   "options": "Water Treatment"
   },
   {
    "depends_on": "eval:doc.softner == '1'",
@@ -314,8 +329,9 @@
   {
    "depends_on": "eval:doc.rain_water_harvesting == '1'",
    "fieldname": "treated_water_rain",
-   "fieldtype": "Data",
-   "label": "Where they treated water"
+   "fieldtype": "Link",
+   "label": "Where they treated water",
+   "options": "Water Treatment"
   },
   {
    "depends_on": "eval:doc.rain_water_harvesting == '1'",
@@ -325,7 +341,7 @@
    "options": "\nYes\nNo"
   },
   {
-   "depends_on": "eval:doc.pre_filteration == 'Yes'\n",
+   "depends_on": "eval:doc.pre_filteration == 'Yes' && doc.rain_water_harvesting == '1'\n",
    "fieldname": "pipe_size_or_water_flow_rate",
    "fieldtype": "Data",
    "label": "Pipe size or water flow rate"
@@ -381,8 +397,9 @@
   {
    "depends_on": "eval:doc.water_dispenser == '1'",
    "fieldname": "treated_water_dispenser",
-   "fieldtype": "Data",
-   "label": "Where they treated water"
+   "fieldtype": "Link",
+   "label": "Where they treated water",
+   "options": "Water Treatment"
   },
   {
    "depends_on": "eval:doc.water_dispenser == '1'",
@@ -654,10 +671,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-22 13:11:31.068074",
+ "modified": "2023-12-22 19:16:34.428692",
  "modified_by": "Administrator",
  "module": "JM Technologies",
  "name": "Enquiry form",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
@@ -669,6 +687,30 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Thirvu Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Thirvu CRM",
    "share": 1,
    "write": 1
   }

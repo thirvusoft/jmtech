@@ -1,0 +1,22 @@
+{
+ "creation": "2023-12-22 19:29:39.224110",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "document_type": "Lead",
+ "dynamic_filters_json": "[[\"Lead\",\"company\",\"=\",\"frappe.defaults.get_user_default(\\\"Company\\\")\"]]",
+ "filters_json": "[[\"Lead\",\"creation\",\"Timespan\",\"this month\",false]]",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "label": "New Lead (This Month)",
+ "modified": "2023-12-22 19:29:39.224110",
+ "modified_by": "Administrator",
+ "module": "JM Technologies",
+ "name": "New Lead (This Month)",
+ "owner": "Administrator",
+ "report_function": "Sum",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Document Type"
+}

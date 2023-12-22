@@ -14,7 +14,8 @@ frappe.query_reports["Daily Follow Up Status"] = {
 			fieldname: 'user',
 			label: 'Follow Up By',
 			fieldtype: 'Link',
-			options: 'User'
+			options: 'User',
+			default: frappe.session.user
 		}
 	]
 };

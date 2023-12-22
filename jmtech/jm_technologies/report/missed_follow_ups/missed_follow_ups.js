@@ -14,7 +14,8 @@ frappe.query_reports["Missed Follow Ups"] = {
 			fieldname: 'user',
 			label: 'Follow Up By',
 			fieldtype: 'Autocomplete',
-			options: []
+			options: [],
+			default: frappe.session.user
 		}
 	],
 	onload: function(report){
