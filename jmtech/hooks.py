@@ -11,7 +11,9 @@ app_license = "mit"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/jmtech/css/jmtech.css"
-# app_include_js = "/assets/jmtech/js/jmtech.js"
+app_include_js = [
+    "/assets/jmtech/js/address.js"
+]
 
 # include js, css files in header of web template
 # web_include_css = "/assets/jmtech/css/jmtech.css"
@@ -168,9 +170,9 @@ doctype_js = {
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
-# override_doctype_dashboards = {
-#	"Task": "jmtech.task.get_dashboard_data"
-# }
+override_doctype_dashboards = {
+	"Lead": "jmtech.custom.py.lead.get_data"
+}
 
 # exempt linked doctypes from being automatically cancelled
 #
