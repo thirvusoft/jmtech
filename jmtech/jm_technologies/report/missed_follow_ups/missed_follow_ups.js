@@ -13,27 +13,9 @@ frappe.query_reports["Missed Follow Ups"] = {
 		{
 			fieldname: 'user',
 			label: 'Follow Up By',
-			fieldtype: 'Autocomplete',
-			options: [],
+			fieldtype: 'Link',
+			options: "User",
 			default: frappe.session.user
 		}
 	],
-	onload: function(report){
-		frappe.db.get_value("User", {"name": frappe.session.user}, "username", (r) => {
-			frappe.query_report.set_filter_value('user', r.username);
-		})
-
-		frappe.call({
-			method: "jmtech.jm_technologies.report.missed_follow_ups.missed_follow_ups.get_user_list",
-			args: {user: frappe.session.user},
-			callback(r){
-				if ((r.message).length < 2){
-					frappe.query_report.page.fields_dict.user.df.hidden = 1;
-				}
-
-				frappe.query_report.page.fields_dict.user.set_data(r.message);
-				frappe.query_report.page.fields_dict.user.refresh();
-			}
-		});
-	}
 };

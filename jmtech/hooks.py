@@ -73,12 +73,18 @@ doctype_js = {
 
 # before_install = "jmtech.install.before_install"
 # after_install = "jmtech.install.after_install"
+after_migrate ="jmtech.custom.py.after_migrate.after_migrate"
 
 # Uninstallation
 # ------------
 
 # before_uninstall = "jmtech.uninstall.before_uninstall"
 # after_uninstall = "jmtech.uninstall.after_uninstall"
+after_install = ["jmtech.custom.py.after_install.create_industry_type",
+                 "jmtech.custom.py.after_install.create_inlet_water_type"
+]
+
+
 
 # Integration Setup
 # ------------------
