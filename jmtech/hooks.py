@@ -73,6 +73,7 @@ doctype_js = {
 
 # before_install = "jmtech.install.before_install"
 # after_install = "jmtech.install.after_install"
+after_migrate ="jmtech.custom.py.after_migrate.after_migrate"
 
 # Uninstallation
 # ------------
