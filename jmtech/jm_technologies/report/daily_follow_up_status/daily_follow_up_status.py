@@ -15,21 +15,21 @@ def get_columns(filters):
 		{
 			'fieldname': 'name',
 			'fieldtype': 'Data',
-			'label': 'Lead / Quotation ID',
+			'label': 'Lead ID',
 			'width': 195
 		},
 
 		{
 			'fieldname': 'lead_name',
 			'fieldtype': 'Data',
-			'label': 'Lead / Quotation Name',
+			'label': 'Lead Name',
 			'width': 195
 		},
 
 		{
 			'fieldname': 'lead_owner',
 			'fieldtype': 'Data',
-			'label': 'Lead / Quotation Owner',
+			'label': 'Lead Owner',
 			'width': 195
 		},
 		{
