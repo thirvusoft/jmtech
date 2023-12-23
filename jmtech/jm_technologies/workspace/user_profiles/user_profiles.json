@@ -1,0 +1,42 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"oM7O22Wg3C\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">User Profiles</span>\",\"col\":12}},{\"id\":\"D5LTFJ95ia\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"User\",\"col\":3}}]",
+ "creation": "2023-12-23 15:14:55.060694",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "assign",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "User Profiles",
+ "links": [],
+ "modified": "2023-12-23 15:16:13.998934",
+ "modified_by": "Administrator",
+ "module": "JM Technologies",
+ "name": "User Profiles",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Thirvu CRM"
+  }
+ ],
+ "sequence_id": 40.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "User",
+   "link_to": "User",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "User Profiles"
+}
