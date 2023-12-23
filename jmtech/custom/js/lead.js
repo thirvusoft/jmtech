@@ -86,3 +86,12 @@ frappe.ui.form.on("Lead", {
         d.show();
     }
 });
+
+var original = cur_frm.add_custom_button;
+cur_frm.add_custom_button = extendedFunc;
+function extendedFunc(...args) {
+    if (!["Customer"].includes(args[0])) {
+        return
+    }
+    original.call(cur_frm, ...args);
+}
