@@ -15,21 +15,21 @@ def get_columns(filters):
 		{
 			'fieldname': 'lead_quotation_id',
 			'fieldtype': 'Data',
-			'label': 'Lead / Quotation ID',
+			'label': 'Lead ID',
 			'width': 200
 		},
 
 		{
 			'fieldname': 'lead_name',
 			'fieldtype': 'Data',
-			'label': 'Lead / Quotation Name',
+			'label': 'Lead Name',
 			'width': 200
 		},
 
 		{
 			'fieldname': 'lead_owner',
 			'fieldtype': 'Data',
-			'label': 'Lead / Quotation Owner',
+			'label': 'Lead Owner',
 			'width': 200
 		},
 
@@ -133,14 +133,3 @@ def get_data(filters):
 
 	
 	return data
-
-@frappe.whitelist()
-def get_user_list(user):
-	# if frappe.get_value("User", {"name": frappe.session.user}, "missed_followup"):
-	# 	user_list = frappe.get_all("User", {"enabled": 1}, ["username"], pluck = "username")
-	# else:
-	# 	user_list = frappe.get_list("User", {"enabled": 1}, ["username"], pluck = "username")
-	
-	user_list = frappe.get_list("User", {"enabled": 1}, pluck = "name")
-
-	return user_list
