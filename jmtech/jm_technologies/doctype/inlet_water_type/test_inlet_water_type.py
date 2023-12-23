@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestEnquiryform(FrappeTestCase):
+class TestInletwatertype(FrappeTestCase):
 	pass

@@ -80,9 +80,7 @@ after_migrate ="jmtech.custom.py.after_migrate.after_migrate"
 
 # before_uninstall = "jmtech.uninstall.before_uninstall"
 # after_uninstall = "jmtech.uninstall.after_uninstall"
-after_install = ["jmtech.custom.py.after_install.create_industry_type",
-                 "jmtech.custom.py.after_install.create_inlet_water_type"
-]
+after_install = ["jmtech.custom.py.after_install.default_create"]
 
 
 

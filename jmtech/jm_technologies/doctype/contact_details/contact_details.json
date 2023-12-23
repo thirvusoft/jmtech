@@ -8,10 +8,10 @@
  "field_order": [
   "name1",
   "designation",
-  "is_whatsapp_number",
   "column_break_tyll",
+  "email_id",
   "contact_number",
-  "email_id"
+  "is_whatsapp_number"
  ],
  "fields": [
   {
@@ -52,13 +52,14 @@
    "default": "0",
    "fieldname": "is_whatsapp_number",
    "fieldtype": "Check",
+   "in_list_view": 1,
    "label": "Is Whatsapp Number"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-12-23 12:51:58.952668",
+ "modified": "2023-12-23 18:22:38.429304",
  "modified_by": "Administrator",
  "module": "JM Technologies",
  "name": "Contact details",
