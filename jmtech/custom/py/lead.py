@@ -46,6 +46,7 @@ def lead_contact(self, event):
             contact.save()
 
     if self.custom_followup:
+        
         last_followup = self.custom_followup[-1]
         if last_followup.get('status'):
             self.status = last_followup.get('status')

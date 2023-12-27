@@ -51,8 +51,7 @@
    "fieldname": "next_follow_up_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Next Follow up Date",
-   "mandatory_depends_on": "eval: !doc.status"
+   "label": "Next Follow up Date"
   },
   {
    "default": "__user",
@@ -103,7 +102,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-12-27 17:26:42.154849",
+ "modified": "2023-12-27 17:52:17.174949",
  "modified_by": "Administrator",
  "module": "JM Technologies",
  "name": "Follow-Up",
