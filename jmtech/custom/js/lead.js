@@ -84,6 +84,23 @@ frappe.ui.form.on("Lead", {
             ]
         });
         d.show();
+    },
+
+    validate: function (frm) {
+        var primaryMobileCount = 0;
+        var primaryMobileNumber = null;
+        $.each(frm.doc.table_ibty || [], function (i, row) {
+            if (row.is_primary_mobile) {
+                primaryMobileCount++;
+                primaryMobileNumber = row.contact_number;
+            }
+        });
+        if (primaryMobileCount == 1) {
+            frm.doc.mobile_no = primaryMobileNumber;
+        } else if (primaryMobileCount > 1) {
+            frappe.msgprint(__('Only one mobile number can be the primary number.'));
+            frappe.validated = false;
+        }
     }
 });
 
@@ -95,3 +112,4 @@ function extendedFunc(...args) {
     }
     original.call(cur_frm, ...args);
 }
+

@@ -130,13 +130,11 @@ after_install = ["jmtech.custom.py.after_install.default_create"]
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-#	"*": {
-#		"on_update": "method",
-#		"on_cancel": "method",
-#		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	"Lead": {
+		"validate": "jmtech.custom.py.lead.lead_contact",
+	}
+}
 
 # Scheduled Tasks
 # ---------------
