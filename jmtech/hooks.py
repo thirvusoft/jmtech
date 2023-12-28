@@ -110,13 +110,13 @@ after_install = ["jmtech.custom.py.after_install.default_create"]
 # -----------
 # Permissions evaluated in scripted ways
 
-# permission_query_conditions = {
-#	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
-# }
+permission_query_conditions = {
+	"Role Profile": "jmtech.custom.py.user.role_profile_permission",
+}
 #
-# has_permission = {
-#	"Event": "frappe.desk.doctype.event.event.has_permission",
-# }
+has_permission = {
+	"Role Profile": "jmtech.custom.py.user.has_role_profile_permission",
+}
 
 # DocType Class
 # ---------------
@@ -130,13 +130,14 @@ after_install = ["jmtech.custom.py.after_install.default_create"]
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-#	"*": {
-#		"on_update": "method",
-#		"on_cancel": "method",
-#		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	"Lead": {
+		"validate": "jmtech.custom.py.lead.lead_contact",
+	},
+	"User":{
+		"validate":"jmtech.custom.py.user.user_permission_create"
+	}
+}
 
 # Scheduled Tasks
 # ---------------
