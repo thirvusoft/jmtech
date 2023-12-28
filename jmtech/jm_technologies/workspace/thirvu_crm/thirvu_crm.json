@@ -1,19 +1,6 @@
 {
- "charts": [
-  {
-   "chart_name": "JM Lead Source",
-   "label": "Lead Source"
-  },
-  {
-   "chart_name": "JM Lead Owner",
-   "label": "Lead Owner"
-  },
-  {
-   "chart_name": "JM Incoming Leads",
-   "label": "Incoming Leads"
-  }
- ],
- "content": "[{\"id\":\"nESwS3ig2R\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Thirvu CRM</span>\",\"col\":12}},{\"id\":\"tKeNHkIaea\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lead\",\"col\":3}},{\"id\":\"KFQoondChZ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Lead (Last 1 Month)\",\"col\":3}},{\"id\":\"mTZ-1LchG0\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"New Lead (This Month)\",\"col\":3}},{\"id\":\"08v-xmOgO4\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"aVCRYn17F6\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}},{\"id\":\"ugIBaxTWAc\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}},{\"id\":\"4NR4IBYbmz\",\"type\":\"card\",\"data\":{\"card_name\":\"Address & Contact\",\"col\":4}},{\"id\":\"kOrny05n4w\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"w7RPnlyZWW\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Lead Source\",\"col\":6}},{\"id\":\"oV3pF7SUk7\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Lead Owner\",\"col\":6}},{\"id\":\"ecD8jldV5h\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"KAw9_bISHk\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Incoming Leads\",\"col\":12}},{\"id\":\"6lVb45AJHg\",\"type\":\"spacer\",\"data\":{\"col\":12}}]",
+ "charts": [],
+ "content": "[{\"id\":\"nESwS3ig2R\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Thirvu CRM</span>\",\"col\":12}},{\"id\":\"tKeNHkIaea\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lead\",\"col\":3}},{\"id\":\"08v-xmOgO4\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"aVCRYn17F6\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}},{\"id\":\"ugIBaxTWAc\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}},{\"id\":\"4NR4IBYbmz\",\"type\":\"card\",\"data\":{\"card_name\":\"Address & Contact\",\"col\":4}},{\"id\":\"kOrny05n4w\",\"type\":\"spacer\",\"data\":{\"col\":12}}]",
  "creation": "2023-12-21 17:58:10.590650",
  "custom_blocks": [],
  "docstatus": 0,
@@ -141,20 +128,11 @@
    "type": "Link"
   }
  ],
- "modified": "2023-12-28 11:45:18.864470",
+ "modified": "2023-12-28 13:38:40.531201",
  "modified_by": "Administrator",
  "module": "JM Technologies",
  "name": "Thirvu CRM",
- "number_cards": [
-  {
-   "label": "Lead (Last 1 Month)",
-   "number_card_name": "New Lead (Last 1 Month)"
-  },
-  {
-   "label": "New Lead (This Month)",
-   "number_card_name": "New Lead (This Month)"
-  }
- ],
+ "number_cards": [],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,

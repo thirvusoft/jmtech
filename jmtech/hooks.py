@@ -135,7 +135,7 @@ doc_events = {
 		"validate": "jmtech.custom.py.lead.lead_contact",
 	},
 	"User":{
-		"validate":"jmtech.custom.py.user.user_permission_create"
+		"after_insert":"jmtech.custom.py.user.user_permission_create"
 	}
 }
 

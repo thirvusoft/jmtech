@@ -6,10 +6,10 @@
  "docstatus": 0,
  "doctype": "Report",
  "filters": [],
- "idx": 7,
+ "idx": 9,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2023-12-28 10:48:04.271117",
+ "modified": "2023-12-28 13:11:11.233947",
  "modified_by": "Administrator",
  "module": "JM Technologies",
  "name": "Daily Follow Up Status",
@@ -26,13 +26,10 @@
    "role": "Thirvu Admin"
   },
   {
-   "role": "Thirvu CRM"
+   "role": "JM Super Admin"
   },
   {
-   "role": "Super Admin"
-  },
-  {
-   "role": "Admin"
+   "role": "JM Admin"
   }
  ]
 }

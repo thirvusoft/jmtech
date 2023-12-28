@@ -56,7 +56,7 @@ def create_role():
 def create_role_profile():
     if(not frappe.db.exists('Role Profile', 'Super Admin')):
         new_doc=frappe.new_doc("Role Profile")
-        roles=["Sales User", "JM Super Admin"]
+        roles=["Sales User", "JM Super Admin", "Sales Manager", "Thirvu Admin", "Thirvu CRM"]
         role_list=[]
         for role in roles:
             role_dict = frappe._dict({
@@ -72,7 +72,7 @@ def create_role_profile():
         frappe.db.commit()
     if(not frappe.db.exists('Role Profile', 'Admin')):
         new_doc=frappe.new_doc("Role Profile")
-        roles=["Sales User", "JM Admin"]
+        roles=["Sales User", "JM Admin", "Sales Manager", "Thirvu Admin", "Thirvu CRM"]
         role_list=[]
         for role in roles:
             role_dict = frappe._dict({
@@ -87,7 +87,7 @@ def create_role_profile():
         frappe.db.commit()
     if(not frappe.db.exists('Role Profile', 'Sales Head')):
         new_doc=frappe.new_doc("Role Profile")
-        roles=["Sales User", "JM Sales Head"]
+        roles=["Sales User", "JM Sales Head", "Thirvu CRM"]
         role_list=[]
         for role in roles:
             role_dict = frappe._dict({
@@ -102,7 +102,7 @@ def create_role_profile():
         frappe.db.commit()
     if(not frappe.db.exists('Role Profile', 'Sales User')):
         new_doc=frappe.new_doc("Role Profile")
-        roles=["Sales User", "JM Sales User"]
+        roles=["Sales User", "JM Sales User", "Thirvu CRM"]
         role_list=[]
         for role in roles:
             role_dict = frappe._dict({

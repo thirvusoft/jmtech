@@ -1,0 +1,58 @@
+{
+ "charts": [
+  {
+   "chart_name": "JM Lead Source",
+   "label": "Lead Source"
+  },
+  {
+   "chart_name": "JM Lead Owner",
+   "label": "Lead Owner"
+  },
+  {
+   "chart_name": "JM Incoming Leads",
+   "label": "Incoming Leads"
+  }
+ ],
+ "content": "[{\"id\":\"8ri2LcNX7H\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">CRM Dashboard</span>\",\"col\":12}},{\"id\":\"3UbNdjCX6-\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"New Lead (This Month)\",\"col\":4}},{\"id\":\"u40_RkVoKm\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"New Lead (Last 1 Month)\",\"col\":4}},{\"id\":\"JELVChw9WH\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"cTVP2M7psi\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Lead Source\",\"col\":6}},{\"id\":\"Wj2EDN5iH2\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Lead Owner\",\"col\":6}},{\"id\":\"j8haCAFUNB\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"lD0rbC4cnw\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Incoming Leads\",\"col\":12}}]",
+ "creation": "2023-12-28 13:34:39.325117",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "chart",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "CRM Dashboard",
+ "links": [],
+ "modified": "2023-12-28 13:38:08.740458",
+ "modified_by": "Administrator",
+ "module": "JM Technologies",
+ "name": "CRM Dashboard",
+ "number_cards": [
+  {
+   "label": "New Lead (This Month)",
+   "number_card_name": "New Lead (This Month)"
+  },
+  {
+   "label": "New Lead (Last 1 Month)",
+   "number_card_name": "New Lead (Last 1 Month)"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "JM Super Admin"
+  },
+  {
+   "role": "JM Admin"
+  }
+ ],
+ "sequence_id": 41.0,
+ "shortcuts": [],
+ "title": "CRM Dashboard"
+}

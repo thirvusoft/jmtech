@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "User Profiles",
  "links": [],
- "modified": "2023-12-23 15:16:13.998934",
+ "modified": "2023-12-28 13:32:13.475102",
  "modified_by": "Administrator",
  "module": "JM Technologies",
  "name": "User Profiles",
@@ -24,7 +24,10 @@
  "quick_lists": [],
  "roles": [
   {
-   "role": "Thirvu CRM"
+   "role": "JM Super Admin"
+  },
+  {
+   "role": "JM Admin"
   }
  ],
  "sequence_id": 40.0,
