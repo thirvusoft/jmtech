@@ -1,0 +1,37 @@
+{
+ "based_on": "creation",
+ "chart_name": "JM Incoming Leads",
+ "chart_type": "Count",
+ "creation": "2023-12-28 11:43:22.977294",
+ "custom_options": "{\"type\": \"line\", \"axisOptions\": {\"shortenYAxisNumbers\": 1}, \"tooltipOptions\": {}, \"lineOptions\": {\"regionFill\": 1}}",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "document_type": "Lead",
+ "dynamic_filters_json": "[[\"Lead\",\"company\",\"=\",\"frappe.defaults.get_user_default(\\\"Company\\\")\"]]",
+ "filters_json": "[]",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "last_synced_on": "2023-12-28 11:45:19.466545",
+ "modified": "2023-12-28 11:45:45.501857",
+ "modified_by": "Administrator",
+ "module": "JM Technologies",
+ "name": "JM Incoming Leads",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "roles": [
+  {
+   "role": "JM Admin"
+  },
+  {
+   "role": "JM Super Admin"
+  }
+ ],
+ "time_interval": "Weekly",
+ "timeseries": 1,
+ "timespan": "Last Quarter",
+ "type": "Bar",
+ "use_report_chart": 0,
+ "y_axis": []
+}

@@ -1,0 +1,37 @@
+{
+ "chart_name": "JM Lead Owner",
+ "chart_type": "Group By",
+ "creation": "2023-12-28 11:43:53.558537",
+ "custom_options": "{\"truncateLegends\": 1, \"maxSlices\": 8}",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "document_type": "Lead",
+ "dynamic_filters_json": "[[\"Lead\",\"company\",\"=\",\"frappe.defaults.get_user_default(\\\"Company\\\")\"]]",
+ "filters_json": "[]",
+ "group_by_based_on": "lead_owner",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "last_synced_on": "2023-12-28 11:45:19.415675",
+ "modified": "2023-12-28 11:46:00.318347",
+ "modified_by": "Administrator",
+ "module": "JM Technologies",
+ "name": "JM Lead Owner",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "roles": [
+  {
+   "role": "JM Admin"
+  },
+  {
+   "role": "JM Super Admin"
+  }
+ ],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Donut",
+ "use_report_chart": 0,
+ "y_axis": []
+}
