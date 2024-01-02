@@ -13,7 +13,6 @@ def user_permission_create(doc, action):
             permission_doc.allow = "User"
             permission_doc.for_value = doc.name
             permission_doc.save(ignore_permissions = True)
-            frappe.db.commit()
             
 def role_profile_permission(user):
     if not user:
