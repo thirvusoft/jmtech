@@ -13,6 +13,13 @@ def user_permission_create(doc, action):
             permission_doc.allow = "User"
             permission_doc.for_value = doc.name
             permission_doc.save(ignore_permissions = True)
+    else:
+        user_permission_exists = frappe.db.exists(
+			"User Permission", {"allow": "User", "for_value": doc.name, "user": doc.name}
+		)
+        frappe.delete_doc("User Permission", user_permission_exists)
+
+
             
 def role_profile_permission(user):
     if not user:
