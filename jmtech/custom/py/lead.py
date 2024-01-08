@@ -11,7 +11,7 @@ def get_data(data=None):
 
 def lead_contact(self, event):
     if self.table_ibty:
-        existing_lead_contact = frappe.get_all('Dynamic Link', filters={'link_name': self.name}, fields=['name', 'parent'])
+        existing_lead_contact = frappe.get_all('Dynamic Link', filters={'link_doctype': 'Lead', 'link_name': self.name}, fields=['name', 'parent'])
         if existing_lead_contact:
             lead_contact = frappe.get_doc("Contact", existing_lead_contact[0].parent)
             lead_contact.phone_nos = []
@@ -44,6 +44,14 @@ def lead_contact(self, event):
                 "link_name": self.name
             })
             contact.save()
+    else:
+        existing_lead_contact = frappe.get_all('Dynamic Link', filters={'link_doctype': 'Lead', 'link_name': self.name}, fields=['name', 'parent'])
+        if existing_lead_contact:
+            for lead in existing_lead_contact:
+                try:
+                    frappe.delete_doc("Contact", lead.name)
+                except:
+                    frappe.log_error()
 
     if self.custom_followup:
         

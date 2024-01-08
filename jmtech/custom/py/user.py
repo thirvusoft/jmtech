@@ -17,7 +17,7 @@ def user_permission_create(doc, action):
         user_permission_exists = frappe.db.exists(
 			"User Permission", {"allow": "User", "for_value": doc.name, "user": doc.name}
 		)
-        frappe.delete_doc("User Permission", user_permission_exists)
+        frappe.delete_doc("User Permission", user_permission_exists, ignore_permissions=True)
 
 
             
