@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"oM7O22Wg3C\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">User Profiles</span>\",\"col\":12}},{\"id\":\"D5LTFJ95ia\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"User\",\"col\":3}}]",
+ "content": "[{\"id\":\"oM7O22Wg3C\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">User Profiles</span>\",\"col\":12}},{\"id\":\"D5LTFJ95ia\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"User\",\"col\":3}},{\"id\":\"KyiNOB5HVn\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Data Import\",\"col\":3}}]",
  "creation": "2023-12-23 15:14:55.060694",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "User Profiles",
  "links": [],
- "modified": "2023-12-28 13:32:13.475102",
+ "modified": "2024-01-09 12:12:01.180461",
  "modified_by": "Administrator",
  "module": "JM Technologies",
  "name": "User Profiles",
@@ -32,6 +32,14 @@
  ],
  "sequence_id": 40.0,
  "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Data Import",
+   "link_to": "Data Import",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
   {
    "color": "Grey",
    "doc_view": "List",

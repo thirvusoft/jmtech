@@ -20,8 +20,7 @@
    "fieldname": "name1",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Name",
-   "reqd": 1
+   "label": "Name"
   },
   {
    "columns": 2,
@@ -29,8 +28,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Designation",
-   "options": "Designation",
-   "reqd": 1
+   "options": "Designation"
   },
   {
    "fieldname": "column_break_tyll",
@@ -43,8 +41,7 @@
    "in_list_view": 1,
    "label": "Contact number",
    "length": 10,
-   "options": "Phone",
-   "reqd": 1
+   "options": "Phone"
   },
   {
    "columns": 2,
@@ -52,8 +49,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Email ID",
-   "options": "Email",
-   "reqd": 1
+   "options": "Email"
   },
   {
    "columns": 1,
@@ -75,7 +71,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-12-27 16:25:40.356241",
+ "modified": "2024-01-09 13:37:02.130281",
  "modified_by": "Administrator",
  "module": "JM Technologies",
  "name": "Contact details",

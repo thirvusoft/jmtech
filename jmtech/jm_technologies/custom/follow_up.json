@@ -9,7 +9,7 @@
    "_comments": null,
    "_liked_by": null,
    "_user_tags": null,
-   "creation": "2024-01-02 10:58:13.383071",
+   "creation": "2024-01-09 12:46:18.036386",
    "default_value": null,
    "doc_type": "Follow-Up",
    "docstatus": 0,
@@ -17,15 +17,15 @@
    "field_name": "status",
    "idx": 0,
    "is_system_generated": 0,
-   "modified": "2024-01-02 10:58:13.383071",
+   "modified": "2024-01-09 12:46:18.036386",
    "modified_by": "Administrator",
    "module": null,
    "name": "Follow-Up-status-options",
    "owner": "Administrator",
    "property": "options",
-   "property_type": "Small Text",
+   "property_type": "Select",
    "row_name": null,
-   "value": "\nLead\nReplied\nQuotation\nLost Quotation\nInterested\nConverted\nDo Not Contact\nSite Visited"
+   "value": "Open\nSite Visit\nActive\nQuotation\nClosed\nWaiting for customer reply\nNot interested\nMissed\nCall Not taken"
   }
  ],
  "sync_on_migrate": 1

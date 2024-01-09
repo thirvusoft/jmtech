@@ -17,28 +17,32 @@ def lead_contact(self, event):
             lead_contact.phone_nos = []
             lead_contact.email_ids = []
             for i in self.table_ibty:
-                lead_contact.append("phone_nos", {
-                    "phone": i.contact_number,
-                    "is_primary_mobile_no": i.is_primary_mobile
-                })
-                lead_contact.append("email_ids", {
-                    "email_id": i.email_id,
-                    "is_primary": i.is_primary_mobile
-                })
+                if i.contact_number:
+                    lead_contact.append("phone_nos", {
+                        "phone": i.contact_number,
+                        "is_primary_mobile_no": i.is_primary_mobile
+                    })
+                if i.email_id:
+                    lead_contact.append("email_ids", {
+                        "email_id": i.email_id,
+                        "is_primary": i.is_primary_mobile
+                    })
             lead_contact.save()
         else:
             contact = frappe.new_doc("Contact")
             contact.first_name = self.first_name or self.company_name
 
             for i in self.table_ibty:
-                contact.append("phone_nos", {
-                    "phone": i.contact_number,
-                    "is_primary_mobile_no": i.is_primary_mobile
-                })
-                contact.append("email_ids", {
-                    "email_id": i.email_id,
-                    "is_primary": i.is_primary_mobile
-                })
+                if i.contact_number:
+                    contact.append("phone_nos", {
+                        "phone": i.contact_number,
+                        "is_primary_mobile_no": i.is_primary_mobile
+                    })
+                if i.email_id:
+                    contact.append("email_ids", {
+                        "email_id": i.email_id,
+                        "is_primary": i.is_primary_mobile
+                    })
             contact.append("links", {
                 "link_doctype": "Lead",
                 "link_name": self.name

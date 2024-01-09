@@ -132,7 +132,7 @@ has_permission = {
 
 doc_events = {
 	"Lead": {
-		"validate": "jmtech.custom.py.lead.lead_contact",
+		"on_update": "jmtech.custom.py.lead.lead_contact",
 	},
 	"User":{
 		"on_update":"jmtech.custom.py.user.user_permission_create"
