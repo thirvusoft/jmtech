@@ -26,7 +26,7 @@
  "is_hidden": 0,
  "label": "CRM Dashboard",
  "links": [],
- "modified": "2024-01-02 12:23:35.178473",
+ "modified": "2024-01-18 11:39:50.795857",
  "modified_by": "Administrator",
  "module": "JM Technologies",
  "name": "CRM Dashboard",
@@ -44,11 +44,7 @@
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "roles": [
-  {
-   "role": "JM Super Admin"
-  }
- ],
+ "roles": [],
  "sequence_id": 41.0,
  "shortcuts": [],
  "title": "CRM Dashboard"

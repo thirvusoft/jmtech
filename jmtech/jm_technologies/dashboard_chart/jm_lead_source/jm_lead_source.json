@@ -10,24 +10,17 @@
  "filters_json": "[]",
  "group_by_based_on": "source",
  "group_by_type": "Count",
- "idx": 0,
+ "idx": 1,
  "is_public": 1,
  "is_standard": 1,
- "last_synced_on": "2023-12-28 11:45:19.425663",
- "modified": "2023-12-28 11:46:15.965153",
+ "last_synced_on": "2024-01-18 11:47:55.430032",
+ "modified": "2024-01-18 11:48:09.796176",
  "modified_by": "Administrator",
  "module": "JM Technologies",
  "name": "JM Lead Source",
  "number_of_groups": 0,
  "owner": "Administrator",
- "roles": [
-  {
-   "role": "JM Admin"
-  },
-  {
-   "role": "JM Super Admin"
-  }
- ],
+ "roles": [],
  "time_interval": "Yearly",
  "timeseries": 0,
  "timespan": "Last Year",
