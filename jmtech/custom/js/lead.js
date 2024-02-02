@@ -1,4 +1,26 @@
+var markers = []
 frappe.ui.form.on("Lead", {
+    refresh: function (frm) {
+        markers.forEach(m => {
+            m?.remove()
+        })
+        frm.fields_dict.lead_location.refresh();
+        if (frm.doc.latitude && frm.doc.longitude) {
+			frm.fields_dict.lead_location.map.setView([frm.doc.latitude, frm.doc.longitude], 13);
+            markers.push(L.marker(L.latLng(frm.doc.latitude, frm.doc.longitude)).addTo(cur_frm.fields_dict.lead_location.map))
+        }
+    },
+    get_current_location: async function(frm) {
+        let cur_location = await get_location();
+        frm.set_value('latitude', cur_location['latitude'])
+        frm.set_value('longitude', cur_location['longitude'])
+        frm.fields_dict.lead_location.map.setView([frm.doc.latitude, frm.doc.longitude], 13);
+        markers.forEach(m => {
+            m?.remove()
+        })
+        markers.push(L.marker(L.latLng(frm.doc.latitude, frm.doc.longitude)).addTo(cur_frm.fields_dict.lead_location.map))
+
+    },
     custom_view_follow_up_details: function (frm) {
         if ((frm.doc.custom_followup || []).length == 0) {
             frappe.show_alert({
@@ -113,3 +135,43 @@ function extendedFunc(...args) {
     original.call(cur_frm, ...args);
 }
 
+function check_location_permission() {
+    if ("geolocation" in navigator) {
+        // Geolocation is available
+    } else {
+        // Geolocation is not available
+        window.alert("Geolocation is not supported in this browser.");
+    }
+}
+
+async function get_location() {
+    check_location_permission()
+    async function getLocation() {
+        let latitude, longitude;
+        try {
+            let position = await new Promise((resolve, reject) => {
+                navigator.geolocation.getCurrentPosition(resolve, reject);
+            });
+
+            latitude = position.coords.latitude;
+            longitude = position.coords.longitude;
+        } catch (error) {
+            // Handle errors by displaying them as alerts
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    window.alert("User denied the request for Geolocation.");
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    window.alert("Location information is unavailable.");
+                    break;
+                case error.TIMEOUT:
+                    window.alert("The request to get user location timed out.");
+                    break;
+                default:
+                    window.alert("An unknown error occurred.");
+            }
+        }
+        return {"latitude":latitude, "longitude":longitude}
+    }
+    return await getLocation();
+}
