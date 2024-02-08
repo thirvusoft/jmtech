@@ -12,7 +12,8 @@ app_license = "mit"
 # include js, css files in header of desk.html
 # app_include_css = "/assets/jmtech/css/jmtech.css"
 app_include_js = [
-    "/assets/jmtech/js/address.js"
+    "/assets/jmtech/js/address.js",
+    "/assets/jmtech/js/lead.js"
 ]
 
 # include js, css files in header of web template
@@ -33,7 +34,7 @@ app_include_js = [
 doctype_js = {
     "Lead" : "custom/js/lead.js"
 }
-# doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
+# doctype_list_js = {"Lead" : "custom/js/lead_listview.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 

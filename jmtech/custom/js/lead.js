@@ -1,16 +1,45 @@
-var markers = []
+var original = cur_frm.add_custom_button;
+cur_frm.add_custom_button = extendedFunc;
+function extendedFunc(...args) {
+    if (!["Customer", "Toggle Editable"].includes(args[0])) {
+        return
+    }
+    original.call(cur_frm, ...args);
+}
+
+var markers = [], isEditable = false, write_fields = [];
+
 frappe.ui.form.on("Lead", {
     refresh: function (frm) {
+        if (!frm.is_new()) {
+            if (!write_fields.length) {
+                write_fields = cur_frm.fields.map((a) => a.disp_status == "Write" ? a.df.fieldname : undefined);
+            }
+            toggleEditFields(frm, isEditable);
+            isEditable = !isEditable;
+            frm.add_custom_button(('Toggle Editable'), function () {
+                toggleEditFields(frm, isEditable);
+                isEditable = !isEditable;
+            });
+        }
+        if (frm.doc.mobile_no) {
+            var call = `tel:${frm.doc.mobile_no}`;
+            frm.set_df_property('custom_phone_call', 'options', `<button onclick="window.location.href = '${call}'">Call &#128222; ${frm.doc.mobile_no}</button>`);
+        }
+
         markers.forEach(m => {
             m?.remove()
         })
         frm.fields_dict.lead_location.refresh();
         if (frm.doc.latitude && frm.doc.longitude) {
-			frm.fields_dict.lead_location.map.setView([frm.doc.latitude, frm.doc.longitude], 13);
+            frm.fields_dict.lead_location.map.setView([frm.doc.latitude, frm.doc.longitude], 13);
             markers.push(L.marker(L.latLng(frm.doc.latitude, frm.doc.longitude)).addTo(cur_frm.fields_dict.lead_location.map))
         }
     },
-    get_current_location: async function(frm) {
+    after_save: function (frm) {
+        frappe.set_route("List", "Lead");
+    },
+    get_current_location: async function (frm) {
         let cur_location = await get_location();
         frm.set_value('latitude', cur_location['latitude'])
         frm.set_value('longitude', cur_location['longitude'])
@@ -29,7 +58,6 @@ frappe.ui.form.on("Lead", {
             });
             return;
         }
-
         let data = `
         <table style="font-size:14px; border:1px solid black;width:100%">
 			<tr style="font-weight:bold; border:1px solid black; padding:5px;">
@@ -126,15 +154,6 @@ frappe.ui.form.on("Lead", {
     }
 });
 
-var original = cur_frm.add_custom_button;
-cur_frm.add_custom_button = extendedFunc;
-function extendedFunc(...args) {
-    if (!["Customer"].includes(args[0])) {
-        return
-    }
-    original.call(cur_frm, ...args);
-}
-
 function check_location_permission() {
     if ("geolocation" in navigator) {
         // Geolocation is available
@@ -171,7 +190,19 @@ async function get_location() {
                     window.alert("An unknown error occurred.");
             }
         }
-        return {"latitude":latitude, "longitude":longitude}
+        return { "latitude": latitude, "longitude": longitude }
     }
     return await getLocation();
+}
+
+
+function toggleEditFields(frm, isEditable) {
+    var fieldnames = Object.keys(frm.fields_dict);
+    for (var i = 0; i < fieldnames.length; i++) {
+        var fieldname = fieldnames[i];
+        if (write_fields.includes(fieldname)) {
+            frm.toggle_enable(fieldname, isEditable);
+            frm.refresh_field(fieldname)
+        }
+    }
 }

@@ -63,3 +63,12 @@ def lead_contact(self, event):
         if last_followup.get('status'):
             self.status = last_followup.get('status')
 
+
+def lead_name():
+    leadlist = frappe.get_all("Lead", order_by="name")
+    idx = 1
+    for lead_info in leadlist:
+        lead = frappe.get_doc('Lead', lead_info.name)
+        new_lead_id = "L" + str(idx)
+        frappe.rename_doc("Lead", lead.name, new_lead_id, force=True)
+        idx += 1
