@@ -3,7 +3,6 @@ frappe.ui.form.LeadQuickEntryForm = class LeadQuickEntryForm extends (frappe.ui.
         super.render_dialog();
         var me = this;
         var markers = [];
-
         this.dialog.get_field('get_current_location').input.onclick = async function () {
             let cur_location = await get_location();
             me.dialog.set_value('latitude', cur_location['latitude'])
@@ -13,7 +12,6 @@ frappe.ui.form.LeadQuickEntryForm = class LeadQuickEntryForm extends (frappe.ui.
                 m?.remove()
             })
             markers.push(L.marker(L.latLng(cur_location['latitude'], cur_location['longitude'])).addTo(me.dialog.fields_dict.lead_location.map))
-
         }
     }
 }
@@ -28,7 +26,6 @@ function check_location_permission() {
 }
 
 async function get_location() {
-    console.log('hhhhhh')
     check_location_permission()
     async function getLocation() {
         let latitude, longitude;
