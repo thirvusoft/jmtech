@@ -22,11 +22,20 @@ frappe.ui.form.on("Lead", {
                 isEditable = !isEditable;
             });
         }
-        if (frm.doc.mobile_no) {
-            var call = `tel:${frm.doc.mobile_no}`;
-            frm.set_df_property('custom_phone_call', 'options', `<button onclick="window.location.href = '${call}'">Call &#128222; ${frm.doc.mobile_no}</button>`);
-        }
+        var childTable = frm.doc.table_ibty;
+        if (childTable && childTable.length > 0) {
+            var buttonsHtml = '';
+            for (var i = 0; i < childTable.length; i++) {
+                var mobileNo = childTable[i].contact_number;
+                var name = childTable[i].name1;
+                if (mobileNo) {
+                    var call = `tel:${mobileNo}`;
+                    buttonsHtml += `<button onclick="window.location.href = '${call}'"> &#128222; ${name} - ${mobileNo}</button><br><br>`;
+                }
+            }
 
+            frm.set_df_property('custom_phone_call', 'options', buttonsHtml);
+        }
         markers.forEach(m => {
             m?.remove()
         })
@@ -200,7 +209,8 @@ function toggleEditFields(frm, isEditable) {
     var fieldnames = Object.keys(frm.fields_dict);
     for (var i = 0; i < fieldnames.length; i++) {
         var fieldname = fieldnames[i];
-        if (write_fields.includes(fieldname)) {
+        console.log(fieldname)
+        if (write_fields.includes(fieldname) && fieldname != 'custom_followup') {
             frm.toggle_enable(fieldname, isEditable);
             frm.refresh_field(fieldname)
         }
