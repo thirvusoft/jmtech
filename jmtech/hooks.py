@@ -123,9 +123,9 @@ has_permission = {
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-#	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {
+	"Lead": "jmtech.custom.py.lead._Lead"
+}
 
 # Document Events
 # ---------------

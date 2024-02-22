@@ -44,6 +44,18 @@ frappe.ui.form.on("Lead", {
             frm.fields_dict.lead_location.map.setView([frm.doc.latitude, frm.doc.longitude], 13);
             markers.push(L.marker(L.latLng(frm.doc.latitude, frm.doc.longitude)).addTo(cur_frm.fields_dict.lead_location.map))
         }
+
+        frm.set_query("lead_owner", function() {
+            return {
+                query: "jmtech.custom.py.lead.get_users"
+            }
+        });
+
+        frm.set_query("custom_assigned_to", function() {
+            return {
+                query: "jmtech.custom.py.lead.get_users"
+            }
+        });
     },
     after_save: function (frm) {
         frappe.set_route("List", "Lead");

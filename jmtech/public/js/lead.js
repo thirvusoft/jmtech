@@ -13,6 +13,11 @@ frappe.ui.form.LeadQuickEntryForm = class LeadQuickEntryForm extends (frappe.ui.
             })
             markers.push(L.marker(L.latLng(cur_location['latitude'], cur_location['longitude'])).addTo(me.dialog.fields_dict.lead_location.map))
         }
+        this.dialog.get_field('lead_owner').get_query = function() {
+            return {
+                query: "jmtech.custom.py.lead.get_users"
+            }
+        }
     }
 }
 
