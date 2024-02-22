@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"nESwS3ig2R\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Thirvu CRM</span>\",\"col\":12}},{\"id\":\"tKeNHkIaea\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lead\",\"col\":3}},{\"id\":\"08v-xmOgO4\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"aVCRYn17F6\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}},{\"id\":\"ugIBaxTWAc\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}},{\"id\":\"4NR4IBYbmz\",\"type\":\"card\",\"data\":{\"card_name\":\"Address & Contact\",\"col\":4}},{\"id\":\"kOrny05n4w\",\"type\":\"spacer\",\"data\":{\"col\":12}}]",
+ "content": "[{\"id\":\"nESwS3ig2R\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Thirvu CRM</span>\",\"col\":12}},{\"id\":\"tKeNHkIaea\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lead\",\"col\":3}},{\"id\":\"874APhWvti\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Issue\",\"col\":3}},{\"id\":\"08v-xmOgO4\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"aVCRYn17F6\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}},{\"id\":\"ugIBaxTWAc\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}},{\"id\":\"4NR4IBYbmz\",\"type\":\"card\",\"data\":{\"card_name\":\"Address & Contact\",\"col\":4}},{\"id\":\"kOrny05n4w\",\"type\":\"spacer\",\"data\":{\"col\":12}}]",
  "creation": "2023-12-21 17:58:10.590650",
  "custom_blocks": [],
  "docstatus": 0,
@@ -118,7 +118,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-01-18 10:48:18.456800",
+ "modified": "2024-02-17 16:53:13.473697",
  "modified_by": "Administrator",
  "module": "JM Technologies",
  "name": "Thirvu CRM",
@@ -135,6 +135,14 @@
    "doc_view": "List",
    "label": "Lead",
    "link_to": "Lead",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Issue",
+   "link_to": "Issue",
    "stats_filter": "[]",
    "type": "DocType"
   }

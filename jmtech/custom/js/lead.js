@@ -59,6 +59,14 @@ frappe.ui.form.on("Lead", {
         markers.push(L.marker(L.latLng(frm.doc.latitude, frm.doc.longitude)).addTo(cur_frm.fields_dict.lead_location.map))
 
     },
+    custom_open_location: function(frm) {
+        if (frm.doc.latitude && frm.doc.longitude) {
+            window.open(`https://www.google.com/maps?q=${frm.doc.latitude},${frm.doc.longitude}`)
+        } else {
+            frm.scroll_to_field('get_current_location')
+            frappe.show_alert({message: 'Please get the location', indicator: 'red'})
+        }
+    },
     custom_view_follow_up_details: function (frm) {
         if ((frm.doc.custom_followup || []).length == 0) {
             frappe.show_alert({
@@ -209,7 +217,6 @@ function toggleEditFields(frm, isEditable) {
     var fieldnames = Object.keys(frm.fields_dict);
     for (var i = 0; i < fieldnames.length; i++) {
         var fieldname = fieldnames[i];
-        console.log(fieldname)
         if (write_fields.includes(fieldname) && fieldname != 'custom_followup') {
             frm.toggle_enable(fieldname, isEditable);
             frm.refresh_field(fieldname)
