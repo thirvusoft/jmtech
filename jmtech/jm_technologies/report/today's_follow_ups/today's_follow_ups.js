@@ -5,7 +5,14 @@ frappe.query_reports["Today's Follow Ups"] = {
 	"filters": [
 		{
 			fieldname: 'date',
-			label: 'Date',
+			label: 'From Date',
+			fieldtype: 'Date',
+			default: 'Today',
+			reqd: 1
+		},
+		{
+			fieldname: 'next_date',
+			label: 'Follow Up Date',
 			fieldtype: 'Date',
 			default: 'Today',
 			reqd: 1
