@@ -66,10 +66,9 @@ def get_columns(filters):
 def get_data(filters):
 	follow_up_filter = {}
 	lead_filter = {'status':['not in', ['Do Not Contact', 'Quotation Created']]}
-	if(filters.get('date')):
-		follow_up_filter['date'] = filters.get('date')
-	if(filters.get('next_date')):
-		follow_up_filter['next_follow_up_date'] = filters.get('next_date')
+	if(filters.get('date') and filters.get('next_date')):
+		follow_up_filter['next_follow_up_date'] = ["between",[filters.get('date'),filters.get('next_date')]]
+		
 	if (filters.get('user')):
 		follow_up_filter['next_follow_up_by'] = filters.get('user')
 
