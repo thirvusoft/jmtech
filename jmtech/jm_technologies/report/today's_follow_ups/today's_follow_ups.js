@@ -12,7 +12,7 @@ frappe.query_reports["Today's Follow Ups"] = {
 		},
 		{
 			fieldname: 'next_date',
-			label: 'Follow Up Date',
+			label: 'To Date',
 			fieldtype: 'Date',
 			default: 'Today',
 			reqd: 1
